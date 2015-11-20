@@ -299,8 +299,7 @@ public class SetMojo
                                 + sourceVersion );
                     }
                     final boolean targetExplicit = PomHelper.isExplicitVersion( targetModel );
-                    if ( ( updateMatchingVersions.booleanValue() || !targetExplicit ) && StringUtils.equals(
-                        parent.getVersion(), PomHelper.getVersion( targetModel ) ) )
+                    if ( updateMatchingVersions || !targetExplicit )
                     {
                         getLog().debug(
                             "    module is " + ArtifactUtils.versionlessKey( PomHelper.getGroupId( targetModel ),
